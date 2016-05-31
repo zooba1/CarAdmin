@@ -275,6 +275,7 @@
         <!-- END PAGE CONTAINER -->
 
         <!-- MESSAGE BOX-->
+         <h:form>
         <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
             <div class="mb-container">
                 <div class="mb-middle">
@@ -283,15 +284,19 @@
                         <p>Are you sure you want to log out?</p>                    
                         <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
                     </div>
+                    
                     <div class="mb-footer">
                         <div class="pull-right">
-                            <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
-                            <button class="btn btn-default btn-lg mb-control-close">No</button>
+                        <!--    <a href="/CarcareAdminn/faces/restricted/index1.xhtml" class="btn btn-success btn-lg" >Yes</a>-->
+                        <h:commandButton   value="Yes" class="btn btn-success btn-lg" action="#{bean.logout}"></h:commandButton>
+                        <h:commandButton   value="No" class="btn btn-default btn-lg mb-control-close"></h:commandButton>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
+            </h:form>
         <!-- END MESSAGE BOX-->
 
         <!-- START PRELOADS -->
