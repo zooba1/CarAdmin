@@ -6,10 +6,12 @@
 package controller;
 
 import dao.MakeDao;
+import dao.VehicleDao;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import pojo.Make;
+import pojo.Vehicle;
 
 /**
  *
@@ -17,10 +19,12 @@ import pojo.Make;
  */
 public class Handler {
     MakeDao makeDao=new MakeDao();
-   public List<Make> getVehicle()
+    VehicleDao v=new VehicleDao();
+   public List<Vehicle> getVehicle()
    {
-  // makeDao.findAll(Make.class);
-      List<Make> arr= makeDao.findAll();
+       List<Vehicle> arr;
+       arr= v.findAll(Vehicle.class);
+       
      return arr;
            
    }

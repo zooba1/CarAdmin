@@ -5,17 +5,19 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
     <style>
         .ui-panel-titlebar {
             background: #000;
         }
+        
     </style>
     <h:head>
         
     </h:head>
     <h:body>
      <h:form id="form">
-         <p:dataGrid var="car" value="#{vehicle.vehicles}" columns="3" layout="grid"
+        <p:dataGrid var="car" value="#{vehicle.model}" columns="3" layout="grid"
         rows="12" paginator="true" id="cars"
         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
         rowsPerPageTemplate="6,12,16" style="background-color: black">
@@ -24,16 +26,17 @@
            Vehicles
         </f:facet>
  
-        <p:panel header="#{car}" style="text-align:center; background:  #000;color: whitesmoke">
+            <p:panel header="#{car.id}" style="text-align:center; background:  #000;color: whitesmoke">
             <h:panelGrid columns="1" style="width:100%">
-               
-                <h:outputText value="#{car}" />
- 
-                
+                Vehicle Name: <h:outputText value="#{car.name}" style="" />
+                License Plate:<h:outputText value="#{car.licencePlate}" />
+                Initial Odometer:<h:outputText value="#{car.intialOdemeter}" />
+                Current Odometer:<h:outputText value="#{car.currentOdemeter}" />
             </h:panelGrid>
         </p:panel>
  
     </p:dataGrid>
+         
      </h:form>
     </h:body>
 </ui:composition>
